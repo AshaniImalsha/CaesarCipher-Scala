@@ -9,7 +9,7 @@ object caesarcipher{
 
 		val E=(c:Char,key:Int,a:String)=>a((a.indexOf(c.toUpper)+key)%a.size)
 
-		val D=(c:Char,key:Int,a:String)=>a((a.indexOf(c.toUpper)-key)%a.size)
+		val D=(c:Char,key:Int,a:String)=>a((a.indexOf(c.toUpper)+a.size-key)%a.size)
 
 		val cipher= (algo:(Char,Int,String)=>Char,s:String,key:Int,a:String)=>s.map(c=> if (c==' ') c else algo(c,key,a))
 		
